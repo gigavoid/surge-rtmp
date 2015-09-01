@@ -1,7 +1,7 @@
 The Surge RTMP streaming server
 =====================
 
-Based on brocaar's [https://github.com/brocaar/nginx-rtmp-dockerfile](nginx-rtmp-module).
+Based on brocaar's [nginx-rtmp-module](https://github.com/brocaar/nginx-rtmp-dockerfile)
 
 
 
@@ -9,7 +9,7 @@ Running
 ------
 If you want to run the server by first building it, please see the Building section below.
 
-There are automated builds for this project at our (https://hub.docker.com/r/gigavoid/surge-rtmp)[Docker Hub], which can be run without even cloning this repository. For example:
+There are automated builds for this project at our [Docker Hub](https://hub.docker.com/r/gigavoid/surge-rtmp), which can be run without even cloning this repository. For example:
 
 ```
 docker run --restart=always --name surge-rtmp -p 1936:80 -p 1935:1935 -d gigavoid/surge-rtmp
@@ -27,8 +27,8 @@ There are two scripts in the `bin` folder that either can be used as is or modif
 Links
 -----
 
-* http://nginx.org/
-* https://github.com/arut/nginx-rtmp-module
-* https://www.ffmpeg.org/
-* https://obsproject.com/
-* https://github.com/brocaar/nginx-rtmp-dockerfile
+* [nginx](http://nginx.org/)
+* [nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module)
+* [ffmpeg](https://www.ffmpeg.org/)
+* [OBS](https://obsproject.com/)
+* [nginx-rtmp-dockerfile](https://github.com/brocaar/nginx-rtmp-dockerfile)
