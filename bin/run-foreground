@@ -1,0 +1,2 @@
+docker build -t surge-rtmp .. && docker run -it --rm --name surge-rtmp -p 1180:80 -p 1935:1935 nginx-rtmp
+
