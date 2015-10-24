@@ -12,7 +12,7 @@ If you want to run the server by first building it, please see the Building sect
 There are automated builds for this project at our [Docker Hub](https://hub.docker.com/r/gigavoid/surge-rtmp), which can be run without even cloning this repository. For example:
 
 ```
-docker run --restart=always --name surge-rtmp -p 1936:80 -p 1935:1935 -d gigavoid/surge-rtmp
+docker run --restart=always --name surge-rtmp -p 1936:1936 -p 1935:1935 -d gigavoid/surge-rtmp
 ```
 
 
