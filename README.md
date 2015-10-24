@@ -8,13 +8,13 @@ Running With Runscript
 ------
 The runscript included in the `bin` folder is intended to be run from outside of the docker container. It can be used for simple servers which require no special features such as container linking. It supports both daemon and interactive mode. You can see all available options by running
 
-```
+```bash
 ./surge-rtmp -h
 ```
 
 A few examples:
 
-````
+```bash
 # A default server running interactively with port 1935 for RTMP and 1936 for HTTP stats. It will build a local version of the docker image.
 ./surge-rtmp
 
