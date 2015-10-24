@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PATH=$PATH:/usr/local/nginx/sbin
 
 EXPOSE 1935
-EXPOSE 80
+EXPOSE 1936
 
 # create directories
 RUN mkdir /src && mkdir /config && mkdir /logs && mkdir /data && mkdir /static
