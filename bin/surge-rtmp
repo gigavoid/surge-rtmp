@@ -1,0 +1,79 @@
+#!/bin/sh
+
+##
+# PARSE OPTIONS
+##
+
+OPTIND=1
+OPTERR=0
+
+daemon=0
+rtmp_port=1936
+http_port=1935
+prebuilt=0
+
+
+function show_help() {
+cat << EOF
+usage: up [-h] [-d] [-p] [-r rtmp-port] [-w web-port]
+-h:
+    Show this message.
+
+-d:
+    Run as a daemon. Default false.
+
+-p:
+    Use a prebuilt image from dockerhub
+
+-r:
+    RTMP port. Default 1936.
+
+-w:
+    Web port. Default 1935.
+EOF
+}
+
+while getopts "h?dpr:w:" opt; do
+    case "$opt" in
+    \?)
+        show_help
+        exit 1
+        ;;
+    h)
+        show_help
+        exit 1
+        ;;
+    d)
+        daemon=1
+        ;;
+    p)
+        prebuilt=1
+        ;;
+    r)
+        rtmp_port=$OPTARG
+        ;;
+    w)
+        http_port=$OPTARG
+        ;;
+    esac
+done
+
+##
+# MAIN SCRIPT
+##
+
+docker build -t surge-rtmp ..
+
+image="surge-rtmp"
+
+if [[ $prebuilt -eq 1 ]]; then
+    image="gigavoid/surge-rtmp"
+fi
+
+if [[ $daemon -eq 0 ]]; then
+    docker run -it --rm --name surge-rtmp \
+        -p 1936:$rtmp_port -p 1935:$http_port $image
+else
+    docker run --restart=always --name surge-rtmp -d \
+        -p 1936:$rtmp_port -p 1935:$http_port $image
+fi

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-docker build -t surge-rtmp .. && docker run --restart=always --name surge-rtmp -p 1936:1936 -p 1935:1935 -d surge-rtmp
